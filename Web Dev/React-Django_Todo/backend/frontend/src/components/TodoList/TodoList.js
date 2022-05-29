@@ -1,5 +1,5 @@
 // import TodoCard from "./TodoCard"
-import TodoCard from "./TodoCardGrid"
+import TodoCard from "../TodoCard/TodoCardGrid"
 import { useEffect, useState } from "react"
 const todos = [
   { id: 1, title: "go toilet", description: "i dont know", isCompleted: true },
