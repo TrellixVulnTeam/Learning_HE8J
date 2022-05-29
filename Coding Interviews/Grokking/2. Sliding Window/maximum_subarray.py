@@ -16,17 +16,19 @@ def maximum_subarray_of_size_k(K, arr):
     
     return max_sum
 
-
+#https://leetcode.com/problems/maximum-subarray/submissions/
 def maximum_subarray(arr):
     temp_accumulator = 0
     max_sum = arr [0] 
 
     for num in arr:
         temp_accumulator += num
+
         max_sum = max (max_sum, temp_accumulator)
+
         if temp_accumulator < 0:
             temp_accumulator = 0
-            
+
     return max_sum
         
 

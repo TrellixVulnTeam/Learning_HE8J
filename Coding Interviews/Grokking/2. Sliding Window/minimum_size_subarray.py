@@ -1,3 +1,4 @@
+#https://leetcode.com/problems/minimum-size-subarray-sum/
 import math
 def smallest_subarray_with_given_sum(k, arr):
     windowSize = math.inf
@@ -13,7 +14,7 @@ def smallest_subarray_with_given_sum(k, arr):
             #shrink the window
             windowSum -= arr[windowsStart]
             windowsStart += 1
-            
+
     if windowSize == math.inf:
         return 0
     

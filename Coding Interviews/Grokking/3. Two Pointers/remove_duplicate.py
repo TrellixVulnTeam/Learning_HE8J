@@ -10,7 +10,7 @@ def remove_duplicate(arr):
         if arr[next_non_duplicate - 1 ] != arr[i]:
             arr[next_non_duplicate] = arr [i]
             next_non_duplicate += 1
-
+        i += 1
         #basially the idea is iterate through the list, then only move the next_non_duplicate once we replace it with a unique char.
 
 

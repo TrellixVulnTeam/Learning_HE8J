@@ -5,11 +5,6 @@
 3. while matched count is same as pattern size, we shrink the window
 '''
 
-from cgitb import small
-from operator import le
-from re import sub
-
-
 def find_substring(str, pattern):
 
     char_frequency = {}
