@@ -1,7 +1,7 @@
 import TodoCard from "./TodoCard"
 import { useEffect, useState } from "react"
 const todos = [
-  { id: 1, title: "go toilet", description: "i dont know", isCompleted: false },
+  { id: 1, title: "go toilet", description: "i dont know", isCompleted: true },
   { id: 2, title: "sdfmsdiofcm", description: "i dont know", isCompleted: false },
   { id: 3, title: "sdfmsdiofcm", description: "i dont know", isCompleted: false },
 ]
