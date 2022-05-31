@@ -1,3 +1,5 @@
+# Router
+
 1. imports the packages
 2. create pages inside src
 3. in main App wrap using router
@@ -9,7 +11,7 @@
 
 ## App.js
 
-```
+```js
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
 import { Home } from "./pages/Home"
 import { About } from "./pages/About"
@@ -34,14 +36,13 @@ function App() {
 }
 
 export default App
-
 ```
 
 ---
 
 ## Profile.js
 
-```
+```js
 import { useNavigate, useParams } from "react-router-dom"
 export const Profile = () => {
   let navigate = useNavigate()

@@ -4,7 +4,7 @@
 
 ## Targetting components
 
-```
+```js
 const hello  = styled.div`
 
     &:hover ${anothercomponent's name} {
@@ -17,23 +17,22 @@ const hello  = styled.div`
 
 ## Inheritance
 
-```
-    const Div = styled.div`
-        padding: 10px;
-        color: palevioletred;
-    `
+```js
+const Div = styled.div`
+  padding: 10px;
+  color: palevioletred;
+`
 
-    const InheritedDiv = styled(Div)`
-        border: 1px solid palevioletred;
-    `
-
+const InheritedDiv = styled(Div)`
+  border: 1px solid palevioletred;
+`
 ```
 
 ---
 
 ## Use CSS directly
 
-```
+```js
     import styled, { css } from ‘styled-components’;
 
     const baseInputStyles = css`

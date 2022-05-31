@@ -1,10 +1,12 @@
-# Grid
+# CSS
+
+## Grid
 
 ---
 
 ## Setting up grid
 
-```
+```css
 grid-template-rows: 1fr 1fr
 grid-template-cols: 3fr 7fr
 
@@ -17,7 +19,7 @@ child components :
 
 ---
 
-# Flexbox
+## Flexbox
 
 In general, flex: 1 doesn't really space out things evenly,
 can consider using grid if we want nicely spaced
@@ -26,7 +28,7 @@ can consider using grid if we want nicely spaced
 
 ## Centering a div
 
-```
+```css
 width: 50%
 margin: auto
 ```

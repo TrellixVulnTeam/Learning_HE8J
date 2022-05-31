@@ -1,3 +1,16 @@
+# Redux
+
+- [Redux](#redux)
+  - [Why do we use redux?](#why-do-we-use-redux)
+  - [store.js](#storejs)
+  - [userSlice.js](#userslicejs)
+  - [Index.js](#indexjs)
+  - [In any actual component](#in-any-actual-component)
+  - [To use actions to update state?](#to-use-actions-to-update-state)
+  - [API](#api)
+    - [Custom reducers](#custom-reducers)
+  - [Async thunk](#async-thunk)
+
 1. create a redux folder - slice and store
 2. for slice, theres : names, initalstate, and reducers
 3. export reducer, go to store and use configurestore and add in reducer
@@ -14,7 +27,7 @@ Redux only changes it if the thing used is changed.
 
 ## store.js
 
-```
+```js
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
 
@@ -28,8 +41,8 @@ export default configureStore({
 
 ## userSlice.js
 
-```
-import { createSlice } from "@reduxjs/toolkit";
+```js
+import { createSlice } from "@reduxjs/toolkit"
 
 export const userSlice = createSlice({
   name: "user",
@@ -39,43 +52,43 @@ export const userSlice = createSlice({
   },
   reducers: {
     update: (state, action) => {
-      state.name = action.payload.name;
-      state.email = action.payload.email;
+      state.name = action.payload.name
+      state.email = action.payload.email
     },
     remove: (state) => {
-      state = null;
+      state = null
     },
-    addHelloToName : (state, action) =>{
+    addHelloToName: (state, action) => {
       state.name = "Hello " + action.payload.name
-    }
+    },
   },
-});
+})
 ```
 
 ---
 
 ## Index.js
 
-```
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import store from "./redux/store";
-import { Provider } from "react-redux";
+```js
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./App"
+import store from "./redux/store"
+import { Provider } from "react-redux"
 
 ReactDOM.render(
   <Provider store={store}>
-      <App />
+    <App />
   </Provider>,
   document.getElementById("root")
-);
+)
 ```
 
 ---
 
 ## In any actual component
 
-```
+```js
 import {useDispatch, useSelector} from "react-redux"
 const name = useSelector((state) => state.user.name);
 or can use
@@ -86,15 +99,15 @@ const {userInfo, pending, error} = useSelector((state) => state.user)
 
 ## To use actions to update state?
 
-```
+```js
 const dispatch = useDispatch()
 const handleClick = (e) => {
-    e.preventDefault();
-    // without API
-    // dispatch(update({ name, email }));
-    // with API
-    dispatch(updateUser2({ name, email }));
-  };
+  e.preventDefault()
+  // without API
+  // dispatch(update({ name, email }));
+  // with API
+  dispatch(updateUser2({ name, email }))
+}
 ```
 
 ---
@@ -107,7 +120,7 @@ const handleClick = (e) => {
 
 ### Custom reducers
 
-```
+```js
 reducers: {
     updateStart: (state) => {
         state.pending = true
@@ -124,19 +137,19 @@ reducers: {
 
 add another function in redux folder ## apiCalls.js
 
-```
-import axios from "axios";
-import { updateStart, updateSuccess, updateFailure } from "./userSlice";
+```js
+import axios from "axios"
+import { updateStart, updateSuccess, updateFailure } from "./userSlice"
 
 export const updateUser = async (user, dispatch) => {
-  dispatch(updateStart());
+  dispatch(updateStart())
   try {
-    const res = await axios.post("http://localhost:8800/api/users/1/update", user);
-    dispatch(updateSuccess(res.data));
+    const res = await axios.post("http://localhost:8800/api/users/1/update", user)
+    dispatch(updateSuccess(res.data))
   } catch (err) {
-    dispatch(updateFailure());
+    dispatch(updateFailure())
   }
-};
+}
 ```
 
 ---
@@ -145,7 +158,7 @@ export const updateUser = async (user, dispatch) => {
 
 1. we need to use inside extrareducers
 
-```
+```js
 export const updateUser2 = createAsyncThunk("users/update", async (user) => {
   const response = await axios.post("http://localhost:8800/api/users/1/update", user)
   return response.data

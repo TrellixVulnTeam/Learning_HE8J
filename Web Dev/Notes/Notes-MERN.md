@@ -10,7 +10,8 @@ To monitor it everytime we make a change use `nodemon index.js`
 ### To start a project
 
 `yarn add express mongoose dotenv nodemon`
-` nodemon index.js`
+
+`nodemon index.js`
 project
 -models
 -routes
@@ -19,13 +20,13 @@ project
 
 ---
 
-# Express
+## Express
 
 Express is a webframework, that allows u to make backend calls?
 
 ---
 
-# Mongoose (MongoDB)
+## Mongoose (MongoDB)
 
 ### How to start
 
@@ -34,7 +35,7 @@ Then press connect and copy thing into code
 
 ---
 
-# dotenv
+## dotenv
 
 To store the secrets env dependencies, like your keys, mongodb link etc
 
@@ -46,7 +47,7 @@ To store the secrets env dependencies, like your keys, mongodb link etc
 
 ## index.js
 
-```
+```js
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -92,7 +93,7 @@ app.listen(process.env.PORT || 5000, () => {
 
 ## .env
 
-```
+```js
 
 ```
 
@@ -100,7 +101,7 @@ app.listen(process.env.PORT || 5000, () => {
 
 ## routes
 
-```
+```js
 const router = require("express").Router()
 
 // router.get("/usertest", (req, res) => {
@@ -111,14 +112,13 @@ const router = require("express").Router()
 //   const username = req.body.username
 //   res.send("your username is: " + username)
 // })
-
 ```
 
 ---
 
 # with models
 
-```
+```js
 const router = require("express").Router()
 const User = require("../models/User")
 // REGISTER
@@ -126,12 +126,11 @@ router.post("/register", (req, res) => {
   const newUser = new User({ username: req.body.username, email: req.body.email, password: req.body.password })
 })
 module.exports = router
-
 ```
 
 ## Models
 
-```
+```js
 const mongoose = require("mongoose")
 
 const ProductSchema = new mongoose.Schema(
@@ -148,6 +147,4 @@ const ProductSchema = new mongoose.Schema(
 )
 
 module.exports = mongoose.model("Product", ProductSchema)
-
-
 ```
