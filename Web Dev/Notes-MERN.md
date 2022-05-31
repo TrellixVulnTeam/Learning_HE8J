@@ -32,6 +32,8 @@ Express is a webframework, that allows u to make backend calls?
 Go to mongodb cloud, start a cluster, allow network access and allow user.
 Then press connect and copy thing into code
 
+---
+
 # dotenv
 
 To store the secrets env dependencies, like your keys, mongodb link etc
