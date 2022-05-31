@@ -12,7 +12,9 @@ const TodoCard = ({ title, description, isCompleted, onClick, onDelete, onChecke
           <input type="checkbox" id="completed_status" defaultChecked={isCompleted} onChange={onChecked} />
         </div>
 
-        <div style={{}}>{description}</div>
+        <div className="description" style={{ marginTop: "auto" }}>
+          {description}
+        </div>
         <div style={{}}>
           <button onClick={onClick}> Edit</button>
           <button onClick={onDelete}> Delete</button>

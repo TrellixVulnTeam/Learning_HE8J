@@ -118,9 +118,9 @@ const TodoList = () => {
   }
 
   return (
-    <div style={{ border: "5px solid black", width: "50%", margin: "auto" }}>
+    <div style={{ border: "1px solid black", width: "50%", margin: "auto", padding: "20px" }}>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="new_todo_input">What needs to be done</label>
+        <label htmlFor="new_todo_input">What needs to be done?</label>
         <input type="text" id="new_todo_input" name="text" value={activeItem.title} onChange={handleChange}></input>
         <button type="submit">Add</button>
       </form>

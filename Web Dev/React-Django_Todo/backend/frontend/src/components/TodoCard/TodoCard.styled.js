@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 export const Card = styled.div`
-  border: 2px solid black;
+  border: 0.5px solid black;
+  border-radius: 20px;
   width: 80%;
   margin: 20px;
   display: flex;
@@ -11,6 +12,9 @@ export const Card = styled.div`
   }
   padding: 1rem;
   overflow: hidden;
+  .description {
+    font-size: 0.8rem;
+  }
 `
 export const Title = styled.div`
   text-decoration: ${(props) => props.strike && "line-through "};
