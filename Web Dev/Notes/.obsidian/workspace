@@ -1,0 +1,98 @@
+{
+  "main": {
+    "id": "091bb10c53459889",
+    "type": "split",
+    "children": [
+      {
+        "id": "dc58f5e1e9238e92",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Notes-CSS.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a0309120acb5dc9e",
+    "type": "split",
+    "children": [
+      {
+        "id": "bdee9da34d120f0a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a08172cd9ec5f7ac",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "45a5c79058f65bad",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0895468e477e2ff9",
+    "type": "split",
+    "children": [
+      {
+        "id": "8b961d51f0846579",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "56872141dbb39a7d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Notes-CSS.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "dc58f5e1e9238e92",
+  "lastOpenFiles": [
+    "Notes-CSS.md",
+    "Notes-ReactAPI.md",
+    "Notes-DjangoAPI.md",
+    "Pasted image 20220531151257.png",
+    "Notes-Axios.md"
+  ]
+}
