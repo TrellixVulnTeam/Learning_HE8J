@@ -13,10 +13,10 @@ To monitor it everytime we make a change use `nodemon index.js`
 
 `nodemon index.js`
 project
--models
--routes
--.env
--index.js
+	-models
+	-routes
+	-.env
+	-index.js
 
 ---
 

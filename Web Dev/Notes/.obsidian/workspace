@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Notes-CSS.md",
+            "file": "TodoList.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes-CSS.md",
+                "file": "TodoList.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,10 +89,15 @@
   },
   "active": "dc58f5e1e9238e92",
   "lastOpenFiles": [
-    "Notes-CSS.md",
+    "TodoList.md",
+    "Readme.md",
+    "Notes-StyledComponents.md",
+    "Notes-Router.md",
+    "Notes-Redux.md",
     "Notes-ReactAPI.md",
+    "Notes-MERN.md",
     "Notes-DjangoAPI.md",
-    "Pasted image 20220531151257.png",
+    "Notes-CSS.md",
     "Notes-Axios.md"
   ]
 }

@@ -5,6 +5,7 @@ const mongoose = require("mongoose")
 // can have different endpoints
 const userRoute = require("./routes/user")
 const authRoute = require("./routes/auth")
+const productRoute = require("./routes/product")
 
 // so that people wouldnt get the url straight
 const dotenv = require("dotenv")
@@ -20,6 +21,7 @@ app.use(express.json())
 app.get("/api/test", () => console.log("test is sucessful"))
 app.use("/api/user", userRoute)
 app.use("/api/auth", authRoute)
+app.use("/api/products", productRoute)
 
 app.listen(process.env.PORT || 8008, () => {
   console.log("Backend server is running!")

@@ -55,3 +55,54 @@ export const Profile = () => {
     </div>
   )
 ```
+
+## Nested routes
+We need to use <Outlet/> so that it renders the nested route
+[React Router 6: Nested Routes (robinwieruch.de)](https://www.robinwieruch.de/react-router-nested-routes/#:~:text=Nested%20Routes%20are%20a%20powerful,based%20on%20the%20current%20route.)
+
+```js
+// in User.js
+import { Routes, Route, Link, Outlet } from 'react-router-dom';
+
+...
+
+const User = () => {
+  return (
+    <>
+      <h1>User</h1>
+
+      <nav>
+        <Link to="profile">Profile</Link>
+        <Link to="account">Account</Link>
+      </nav>
+
+      <Outlet />
+    </>
+  );
+};
+
+// in Main App file
+const App = () => {
+  return (
+    <>
+      <h1>React Router</h1>
+
+      <nav>
+        <Link to="/home">Home</Link>
+        <Link to="/user">User</Link>
+      </nav>
+
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="home" element={<Home />} />
+        <Route path="user" element={<User />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="account" element={<Account />} />
+        </Route>
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+    </>
+  );
+};
+
+```
