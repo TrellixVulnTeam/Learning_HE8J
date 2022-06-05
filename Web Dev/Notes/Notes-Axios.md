@@ -53,3 +53,65 @@ const client = axios.create({
   baseURL: "https://jsonplaceholder.typicode.com/posts"
 });
 ```
+
+## Axios with token
+in requestMethods. js in src
+```js
+
+
+import axios from "axios";
+
+const BASE_URL = "http://localhost:5000/api/";
+// const TOKEN =
+//   JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser
+//     .accessToken || "";
+
+const user = JSON.parse(localStorage.getItem("persist:root"))?.user;
+const currentUser = user && JSON.parse(user).currentUser;
+const TOKEN = currentUser?.accessToken;
+
+export const publicRequest = axios.create({
+  baseURL: BASE_URL,
+});
+
+export const userRequest = axios.create({
+  baseURL: BASE_URL,
+  header: { token: `Bearer ${TOKEN}` },
+});
+```
+
+To use
+```js
+some async funtion 
+
+a = asynce () => 
+
+try{
+	const data = await publicRequest.get('/products')
+}catch(err) {
+
+} 
+```
+
+Remember to use try catch, and async await
+
+Axios interceptors to refresh token
+
+```jsx
+
+const axiosJWT = axios.create()
+axiosJWT.interceptors.request.use(
+    async (config) => {
+      let currentDate = new Date();
+      const decodedToken = jwt_decode(user.accessToken);
+      if (decodedToken.exp * 1000 < currentDate.getTime()) {
+        const data = await refreshToken();
+        config.headers["authorization"] = "Bearer " + data.accessToken;
+      }
+      return config;
+    },
+    (error) => {
+      return Promise.reject(error);
+    }
+  );
+```

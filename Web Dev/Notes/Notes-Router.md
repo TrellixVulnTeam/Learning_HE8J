@@ -106,3 +106,35 @@ const App = () => {
 };
 
 ```
+
+# Conditional 
+Let's say if user is logged in, if we go "/login" we want to be redifected to the dashboard. 
+```js
+<Route path="/login" element={user ? <Navigate to="/" replace /> : <Login />} />
+```
+### Replace
+Normally a call to navigate will push a new entry into the history stack so the user can click the back button to get back to the page. If you pass replace: true to navigate then the current entry in the history stack will be replaced with the new one.
+
+
+# Link
+Adds a clickable thing to your card!
+```js
+const CategoryItem = ({ item }) => {
+  return (
+    <Container>
+      <Link to={`/products/${item.cat}`}>
+        <Image src={item.img} />
+        <Info>
+          <Title>{item.title}</Title>
+          <Button>SHOP NOW</Button>
+        </Info>
+      </Link>
+    </Container>
+  )
+}
+
+```
+
+
+Either use `onClick = {()=> navigate("/about")})`
+or can wrap button with `<Link> </Link>`
