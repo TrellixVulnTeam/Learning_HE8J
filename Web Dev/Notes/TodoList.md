@@ -2,3 +2,8 @@
 2. Know how to use JWT Auth in node
 3. Make notes on verify function
 4. Learn how to verify on React (Using redux and session cookies)
+
+
+
+1. Figma wireframing the app and design
+2. Start writing features

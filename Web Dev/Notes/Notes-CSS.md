@@ -46,3 +46,27 @@ html {
 font - size: 62.5
 }
 ```
+
+### IMG locks the aspect ratio
+```css
+object-fit: contain 
+
+// background-size:cover
+	background-position: center
+```
+
+### Icons 
+set font size to resize
+```css
+font-size:
+```
+
+## Icon button
+material-ui
+icon-button
+```
+.swipeButtons .MuiIconButton-root{
+ background-color:white;
+ box-shadow:0px 10px 53px 0px rgba(0,0,0,0.3)!important;
+}
+```
