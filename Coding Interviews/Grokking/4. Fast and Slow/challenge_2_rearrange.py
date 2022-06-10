@@ -14,7 +14,7 @@ def reorder(head):
     head_first_half = head
 
     #rearrange to produce linkedlist in the required order
-    while head_first_half is not None and head_scond_half is not None:
+    while head_first_half is not None and head_second_half is not None:
         temp = head_first_half.next
         head_first_half.next = head_second_half
         head_first_half = temp 

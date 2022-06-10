@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Notes-Router.md",
+            "file": "Notes-Redux.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes-Router.md",
+                "file": "Notes-Redux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,8 +89,8 @@
   },
   "active": "dc58f5e1e9238e92",
   "lastOpenFiles": [
-    "Notes-Router.md",
     "Notes-Redux.md",
+    "Notes-Router.md",
     "Notes-CSS.md",
     "TodoList.md",
     "Firebase.md",
