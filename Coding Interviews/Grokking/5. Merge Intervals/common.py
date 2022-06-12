@@ -5,7 +5,7 @@ class Interval:
     
     def __str__(self):
         return str(self.start) + "," + str(self.end)
-
+    #operator overloading for the sort!
     def __lt__(self, object):
         return self.start < object.start
 

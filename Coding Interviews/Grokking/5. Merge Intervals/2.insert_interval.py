@@ -1,24 +1,22 @@
 # https://leetcode.com/problems/insert-interval/
-from common import *
-def insert(intervals, newInterval):
-    res = []
-    #since it is sorted and non overlaping, we skill everything that end before this new thing starts
-    start, end = 0, 1
-    for interval in intervals:
-        if interval[end] < newInterval[start]:
-            res.append(interval)
-            continue
-
-        #if we reach here, it means, our new interval overlaps
-        if (interval[start] <= newInterval[end]) :
-            newInterval[start] = min(interval[start], newInterval[start])
-            newInterval[end] = max(interval[end], newInterval[end])
-            continue
+class Solution:
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+       
+        res = []
+        start, end = 0, 1
+        for i in range (len(intervals)):
+            #new interval end before this interval starts
+            if newInterval[end] < intervals[i][start]:
+                res.append(newInterval)
+                return res + intervals[i:]
             
+            # new interval starts after this interval
+            elif newInterval[start] > intervals[i][end]:
+                res.append(intervals[i])
+
+            else: 
+                newInterval = [min(newInterval[start], intervals[i][start]), max(newInterval[end], intervals[i][end])]
+
         res.append(newInterval)
-        res.append(interval)
-    return res
-    
-
-    
-
+        return res
+        
