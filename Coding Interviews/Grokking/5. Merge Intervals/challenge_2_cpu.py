@@ -18,7 +18,7 @@ def max_cpu_load(jobs):
     max_load = 0
 
     for job in jobs:
-        
+    
         #remove ended jobs
         while (len(minHeap) > 0) and job.start >= minHeap[0].end:
             curr_load -= minHeap[0].load
