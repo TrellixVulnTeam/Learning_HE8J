@@ -32,6 +32,7 @@ class Order:
     #             return self.time > other.time
     #         return self.price > other.price
     
+
     def __lt__(self, other):
         if self.side == "B":
             if (self.price == other.price):
@@ -93,7 +94,6 @@ class Orderbook:
         self.curr_order = order
         if order.side == "B":
             opposing_side = self.sell
-        
             if len(opposing_side) == 0:
                 self.add_order(order)
                 return 0 
@@ -105,18 +105,19 @@ class Orderbook:
                 return 0
 
         val = 0
-        temp_removed = []
+        temp_removed = {}
         while order.quantity > 0:
             
-            self.process_order(order)
-            if len(opposing_side) == 0:
+            self.process_order(order) #check if cancelled or updated
+            if len(opposing_side) == 0: #skip if nothing
                 break;
-                
+            
+            #check if theres any price matches
             if self.check_price_match(order, opposing_side[0]):
                 price = opposing_side[0].price
                 if (price == math.inf):
                     price = order.price
-                
+            
                 val +=  price * min(order.quantity, opposing_side[0].quantity)
                 if order.quantity <= opposing_side[0].quantity:
                     opposing_side[0].reduceQuantity(order.quantity)
@@ -124,19 +125,37 @@ class Orderbook:
                     
                 else: 
                     order.reduceQuantity(opposing_side[0].quantity)
+                    #if immediate or cancel we str8 delete opposing side
                     if type == "IOC":
-                        heapq.heappop(opposing_side)
-                        break
-                    temp_removed.append(opposing_side[0])
+                        if opposing_side[0].display_size != math.inf:
+                            opposing_side[0].reduceQuantity(opposing_side[0].quantity)
+                            opposing_side[0].replenish()
+                            temp = opposing_side[0]
+                            heapq.heappop(opposing_side)
+                            heapq.heappush(opposing_side, temp)
+
+                            #if its the only one and the total quantity is zero,
+                            if opposing_side[0].total_quantity == 0:
+                                heapq.heappop(opposing_side)
+                        
+                        else:
+                            heapq.heappop(opposing_side)
+                            break
+
+                    if type =="FOK":
+                        #ensures ICEBERG only adds once
+                        if opposing_side[0].orderID not in temp_removed:
+                            temp_removed[opposing_side[0].orderID] = opposing_side[0]
                     if (opposing_side[0].display_size != math.inf):
+
                         #add iceberg order to orderbook
                         opposing_side[0].reduceQuantity(opposing_side[0].quantity)
-
                         opposing_side[0].replenish()
                         temp = opposing_side[0]
                         heapq.heappop(opposing_side)
                         heapq.heappush(opposing_side, temp)
-                     
+
+                        #if its the only one and the total quantity is zero,
                         if opposing_side[0].total_quantity == 0:
                             heapq.heappop(opposing_side)
                     else:
@@ -148,12 +167,11 @@ class Orderbook:
             if order.total_quantity > 0:
                 order.quantity = order.display_size
                 self.add_order(order)
-    
             return val
 
         if type == "FOK":
             if order.quantity > 0:
-                for order in temp_removed:
+                for (orderID, order) in temp_removed.items():
                     self.add_order(order)
                 # print("yes")
                 return 0
@@ -271,3 +289,7 @@ while True:
         a.update_order(inputArr[1], inputArr[2], inputArr[3])
 
 a.print()
+
+
+#still missing the  case where FOK and opposing side is ICEBERG
+# also missing the case where IOC, and opposing side is ICEBERG
