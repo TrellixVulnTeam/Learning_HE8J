@@ -1,7 +1,7 @@
 import React from "react"
 import Frontpage from "./components/Frontpage"
 import Navbar from "./components/Navbar"
-import Skills from "./components/Skills"
+import Aboutme from "./components/Aboutme"
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
         <Navbar />
         <Frontpage />
       </div>
-      <Skills />
+      <Aboutme />
     </div>
   )
 }
