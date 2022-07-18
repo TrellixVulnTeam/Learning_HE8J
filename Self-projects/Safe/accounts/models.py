@@ -31,7 +31,7 @@ def get_or_create_default_acc():
     return default_pk
 
 
-class TransactionTags(models.Model):
+class TransactionTag(models.Model):
     name = models.CharField(max_length=20)
     type = models.CharField(max_length=5, choices=[("CR", "Income"), ("DB", "Expense")], default="CR")
 
@@ -44,7 +44,7 @@ class Transaction(models.Model):
     type = models.CharField(max_length=5, choices=[("CR", "Income"), ("DB", "Expense")], default="CR")
     amount = models.FloatField(default = 0.00)
     date = models.DateField(default = timezone.now)
-    tags = models.ForeignKey(TransactionTags, default=None, on_delete=models.SET_DEFAULT)
+    tags = models.ForeignKey(TransactionTag, default=None, on_delete=models.SET_DEFAULT)
     account = models.ForeignKey(Account, default=None, on_delete=models.CASCADE)
 
     def __str__(self):
