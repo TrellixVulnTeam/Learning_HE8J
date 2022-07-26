@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Graph from "./common/Graph"
+import Graph from "./Graph"
 
 const Container = styled.div`
   display: flex;
@@ -11,11 +11,10 @@ const Container = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   margin-bottom: 20px;
-  padding: 21px 20px 10px 20px;
+  padding: 18px 20px 10px 20px;
 `
 const GraphContainer = styled.div`
-  height: 100px;
-  margin-bottom: 10px;
+  height: 90px;
   overflow-x: scroll;
 `
 
@@ -30,8 +29,8 @@ const Dashboard = () => {
         <Graph />
       </GraphContainer>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div style={{ color: "#EC7474", fontWeight: 500 }}>$400</div>
-        <div style={{ color: "#6AC5B4", fontWeight: 500 }}>$500</div>
+        <div style={{ color: "#EC7474", fontWeight: 500 }}>↓ $500</div>
+        <div style={{ color: "#6AC5B4", fontWeight: 500 }}>↑ $500</div>
       </div>
     </Container>
   )

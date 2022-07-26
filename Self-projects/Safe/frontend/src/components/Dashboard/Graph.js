@@ -17,6 +17,9 @@ const Bar = styled.div`
   height: ${(props) => props.height};
   border-radius: 7px;
   background-color: ${(props) => (props.isActive ? "#6AC5B4" : props.color)};
+  transform: ${(props) => props.isActive && "scale(1.1)"};
+  transition: 0.1s ease-in;
+  margin-bottom: 2px;
 `
 
 const monthly_spending = {
@@ -45,13 +48,25 @@ const Graph = () => {
         const height = String((monthly_spending[month] / max) * 100) + "%"
         const isActive = index === activeIndex
         return (
-          <Bar
-            isActive={isActive}
-            onClick={() => setActiveIndex(index)}
-            key={month}
-            height={height}
-            color={color[index % 2]}
-          />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              width: "26px",
+              justifyContent: "flex-end",
+              alignItems: "center",
+            }}
+          >
+            <Bar
+              isActive={isActive}
+              onClick={() => setActiveIndex(index)}
+              key={month}
+              height={height}
+              color={color[index % 2]}
+            />
+            <div style={{ fontSize: "10px", color: "#838282", visibility: `${index % 3 && "hidden"}` }}>{month}</div>
+          </div>
         )
       })}
     </Container>
