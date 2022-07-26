@@ -23,7 +23,7 @@ const Dashboard = () => {
     <Container>
       <div>
         <div style={{ color: "black" }}>Total Balance</div>
-        <h1 style={{ color: "black" }}>$12,000</h1>
+        <h1 style={{ color: "black", fontFamily: "Inter" }}>$12,000</h1>
       </div>
       <GraphContainer>
         <Graph />
