@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled from "styled-components/macro"
 import { useState } from "react"
 const Container = styled.div`
   height: 100%;

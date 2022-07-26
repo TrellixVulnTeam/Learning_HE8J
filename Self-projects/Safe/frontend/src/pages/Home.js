@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled from "styled-components/macro"
 
 import Header from "../components/Header"
 import Dashboard from "../components/Dashboard/Dashboard"

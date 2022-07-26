@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import TagButton from "./TagButton"
-import styled from "styled-components"
+import styled from "styled-components/macro"
 import TransactionCard from "./TransactionCard"
 const Container = styled.div`
   height: 65%;
