@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 const TransactionRow = styled.div`
   display: flex;
@@ -19,14 +20,16 @@ const Image = styled.div`
 
 const Transaction = ({ name, tag, image, price, type }) => {
   return (
-    <TransactionRow>
-      <Image />
-      <span style={{ width: "70%" }}>
-        <div>{name}</div>
-        <div style={{ fontSize: "10px", color: "#838282" }}>{tag}</div>
-      </span>
-      <div style={{ color: `${type === "CR" ? "#5EEAD1" : "#EC7474"}` }}>${price}</div>
-    </TransactionRow>
+    <Link style={{ textDecoration: "none" }} to="/form">
+      <TransactionRow>
+        <Image />
+        <span style={{ width: "70%" }}>
+          <div>{name}</div>
+          <div style={{ fontSize: "10px", color: "#838282" }}>{tag}</div>
+        </span>
+        <div style={{ color: `${type === "CR" ? "#5EEAD1" : "#EC7474"}` }}>${price}</div>
+      </TransactionRow>
+    </Link>
   )
 }
 const TransactionCard = ({ date }) => {
