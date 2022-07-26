@@ -7,6 +7,7 @@ const Container = styled.div`
   flex-direction: row;
   align-items: flex-end;
   width: 135%;
+  padding: 2px;
 
   > * {
     margin-right: 10px;
@@ -45,7 +46,7 @@ const Graph = () => {
   return (
     <Container>
       {Object.keys(monthly_spending).map((month, index) => {
-        const height = String((monthly_spending[month] / max) * 100) + "%"
+        const height = String((monthly_spending[month] / max) * 90) + "%"
         const isActive = index === activeIndex
         return (
           <div

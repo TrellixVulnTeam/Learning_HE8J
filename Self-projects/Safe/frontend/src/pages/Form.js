@@ -66,16 +66,16 @@ const Form = () => {
           <Title>
             <Image />
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <h1 style={{ fontSize: "40px", fontWeight: 700 }}>Caifan</h1>
-              <div style={{ fontSize: "20px", fontWeight: 400, color: "black" }}>Food</div>
+              <h1 style={{ fontSize: "40px", fontWeight: 700, fontFamily: "Inter", marginBottom: "20px" }}>Caifan</h1>
+              <div style={{ fontSize: "20px", fontWeight: 400, color: "black", fontFamily: "Inter" }}>Food</div>
             </div>
           </Title>
           <InputBox>
-            <div>$12000</div>
+            <div>$12,000</div>
             <div>CR</div>
           </InputBox>
           <InputBox> DBS</InputBox>
-          <InputBox> DBS</InputBox>
+          <InputBox> Receipt </InputBox>
         </Background>
       </InnerContainer>
     </Container>
