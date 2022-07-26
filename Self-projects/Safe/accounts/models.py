@@ -1,9 +1,12 @@
 from django.utils import timezone
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 class Account(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="account", null = True)
     name = models.CharField(max_length=60)
     balance = models.FloatField(default = 0.00)
     
@@ -32,6 +35,7 @@ def get_or_create_default_acc():
 
 
 class TransactionTag(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="transaction_tag", null = True)
     name = models.CharField(max_length=20)
     type = models.CharField(max_length=5, choices=[("CR", "Income"), ("DB", "Expense")], default="CR")
 
