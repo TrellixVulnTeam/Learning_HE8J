@@ -3,3 +3,9 @@
   display: flex;
   align-items: center;
 }
+
+.Ripple-dropdown {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
