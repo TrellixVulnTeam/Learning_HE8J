@@ -3,7 +3,7 @@ import TagButton from "./TagButton"
 import styled from "styled-components/macro"
 import TransactionCard from "./TransactionCard"
 const Container = styled.div`
-  height: 65%;
+  height: 57.5%;
   > * {
     margin-bottom: 10px;
   }
