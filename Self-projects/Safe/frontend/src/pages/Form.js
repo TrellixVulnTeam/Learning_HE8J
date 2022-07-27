@@ -116,6 +116,9 @@ const SmallInput = styled(BasicInput)`
 const BasicDiv = styled.div`
   font-size: 20px;
   font-weight: 700;
+  :hover {
+    cursor: pointer;
+  }
 `
 
 const Input = ({ placeholder, value, setValue, onClick }) => {
