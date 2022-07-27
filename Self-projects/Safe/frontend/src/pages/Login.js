@@ -35,10 +35,10 @@ const CardContainer = styled.div`
   padding: 30px 20px 10px 20px;
 `
 
-const Input = ({ placeholder, value, setValue, onClick }) => {
+const Input = ({ type, placeholder, value, setValue, onClick }) => {
   return (
     <InputContainer onClick={onClick}>
-      <SmallInput value={value} placeholder={placeholder} />
+      <SmallInput type={type} value={value} placeholder={placeholder} />
     </InputContainer>
   )
 }
@@ -54,7 +54,7 @@ const Login = () => {
       <Container>
         <CardContainer style={{ position: "relative" }}>
           <Input placeholder="username" />
-          <Input placeholder="password" />
+          <Input type="password" placeholder="password" />
           <Zoom in style={{ transitionDelay: "50ms" }}>
             <Fab
               onClick={onClick}
