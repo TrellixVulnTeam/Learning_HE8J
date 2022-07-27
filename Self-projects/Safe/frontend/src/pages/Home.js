@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom"
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 46px 43px;
+  padding: 35px 35px;
   background-color: #292929;
   height: 100vh;
   overflow: hidden;

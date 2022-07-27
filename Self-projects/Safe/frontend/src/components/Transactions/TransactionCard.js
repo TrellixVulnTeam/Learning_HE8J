@@ -6,7 +6,7 @@ import "./Ripple.css"
 const TransactionRow = styled.div`
   width: 100%;
   display: flex;
-  padding: 11px 0;
+  padding: 11px 5px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -27,11 +27,11 @@ const Transaction = ({ name, tag, image, price, type }) => {
       <ButtonBase className="Ripple">
         <TransactionRow>
           <Image />
-          <span style={{ width: "70%", textAlign: "left" }}>
+          <span style={{ fontSize: "16px", width: "70%", textAlign: "left" }}>
             <div>{name}</div>
-            <div style={{ fontSize: "10px", color: "#838282" }}>{tag}</div>
+            <div style={{ fontSize: "12px", color: "#838282" }}>{tag}</div>
           </span>
-          <div style={{ color: `${type === "CR" ? "#5EEAD1" : "#EC7474"}` }}>${price}</div>
+          <div style={{ fontSize: "15px", color: `${type === "CR" ? "#5EEAD1" : "#EC7474"}` }}>${price}</div>
         </TransactionRow>
       </ButtonBase>
     </Link>

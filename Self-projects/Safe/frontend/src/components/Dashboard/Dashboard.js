@@ -5,6 +5,7 @@ import Graph from "./Graph"
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   height: 21.5%;
   background-color: #d9d9d9;
@@ -14,7 +15,7 @@ const Container = styled.div`
   padding: 18px 20px 10px 20px;
 `
 const GraphContainer = styled.div`
-  height: 90px;
+  height: 95px;
   overflow-x: scroll;
 `
 
