@@ -1,18 +1,22 @@
-import React from "react"
+import React, { useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import Form from "./pages/Form"
 import Home from "./pages/Home"
 import { AnimatePresence } from "framer-motion"
 import { useLocation } from "react-router-dom"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
 
 const App = () => {
   const location = useLocation()
-
+  const [isLoggedIn, setLogin] = useState(true)
   return (
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={isLoggedIn ? <Home /> : <Login />} />
         <Route path="/form" element={<Form />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
 
       {/* <Fab
