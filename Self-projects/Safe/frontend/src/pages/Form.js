@@ -66,7 +66,7 @@ const InnerForm = () => {
       </InputContainer>
       <div>
         <Input
-          marginBottom={"10px"}
+          marginBottom={visible ? "10px" : ""}
           value={value}
           placeholder="DBS"
           onClick={() => {
@@ -74,14 +74,17 @@ const InnerForm = () => {
             setVisible(!visible)
           }}
         />
+
         {visible && (
-          <Dropdown
-            choices={choices}
-            onClick={() => {
-              setVisible(!visible)
-            }}
-            setValue={setValue}
-          />
+          <motion.div transition={{ duration: 0.2 }} initial={{ y: "20vh" }} animate={{ y: "0vh" }} exit={{ y: "0vh" }}>
+            <Dropdown
+              choices={choices}
+              onClick={() => {
+                setVisible(!visible)
+              }}
+              setValue={setValue}
+            />
+          </motion.div>
         )}
       </div>
       <Input isTextField={true} placeholder="Description" />

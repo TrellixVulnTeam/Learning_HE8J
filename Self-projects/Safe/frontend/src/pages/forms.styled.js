@@ -90,7 +90,7 @@ export const BasicInput = styled.input`
 `
 export const TitleInput = styled(BasicInput)`
   background-color: transparent;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 700;
   font-family: Inter;
   margin-bottom: 10px;
