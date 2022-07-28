@@ -112,4 +112,5 @@ export const BasicDiv = styled.div`
   :hover {
     cursor: pointer;
   }
+  color: ${(props) => (props.type === "CR" ? "#5EEAD1" : "#EC7474")};
 `

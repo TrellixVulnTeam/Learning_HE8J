@@ -62,7 +62,9 @@ const InnerForm = () => {
     <>
       <InputContainer>
         <SmallInput onChange={(e) => setAmount(e.target.value)} placeholder="$12,000" />
-        <BasicDiv onClick={() => setCRDB(CRDB === "CR" ? "DB" : "CR")}>{CRDB}</BasicDiv>
+        <BasicDiv type={CRDB} onClick={() => setCRDB(CRDB === "CR" ? "DB" : "CR")}>
+          {CRDB}
+        </BasicDiv>
       </InputContainer>
       <div>
         <Input
