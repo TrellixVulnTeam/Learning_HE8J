@@ -1,16 +1,11 @@
 import React from "react"
-import styled from "styled-components/macro"
-import { motion } from "framer-motion"
+import { useNavigate } from "react-router-dom"
 
-import Header from "../components/Header"
-import Dashboard from "../components/Dashboard/Dashboard"
-import Transactions from "../components/Transactions/Transactions"
+import styled from "styled-components/macro"
 
 import { Fab, Zoom } from "@mui/material"
-import AddIcon from "@mui/icons-material/Add"
-import { useNavigate } from "react-router-dom"
-import { InputContainer, SmallInput } from "./forms.styled"
-import { ForkRight, NavigateNext } from "@mui/icons-material"
+import { NavigateNext } from "@mui/icons-material"
+import Input from "../components/common/Input"
 
 const Container = styled.div`
   display: flex;
@@ -34,14 +29,6 @@ const CardContainer = styled.div`
   margin-bottom: 20px;
   padding: 30px 20px 10px 20px;
 `
-
-const Input = ({ type, placeholder, value, setValue, onClick }) => {
-  return (
-    <InputContainer onClick={onClick}>
-      <SmallInput type={type} value={value} placeholder={placeholder} />
-    </InputContainer>
-  )
-}
 
 const Login = () => {
   const navigate = useNavigate()

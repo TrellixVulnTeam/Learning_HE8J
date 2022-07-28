@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { ButtonBase } from "@mui/material/"
+
 import styled from "styled-components/macro"
-import "./Ripple.css"
+
+import Ripple from "../common/Ripple"
+
 const TransactionRow = styled.div`
   width: 100%;
   display: flex;
@@ -24,7 +26,7 @@ const Image = styled.div`
 const Transaction = ({ name, tag, image, price, type }) => {
   return (
     <Link style={{ textDecoration: "none" }} to="/form">
-      <ButtonBase className="Ripple">
+      <Ripple>
         <TransactionRow>
           <Image />
           <span style={{ fontSize: "16px", width: "70%", textAlign: "left" }}>
@@ -33,7 +35,7 @@ const Transaction = ({ name, tag, image, price, type }) => {
           </span>
           <div style={{ fontSize: "15px", color: `${type === "CR" ? "#5EEAD1" : "#EC7474"}` }}>${price}</div>
         </TransactionRow>
-      </ButtonBase>
+      </Ripple>
     </Link>
   )
 }

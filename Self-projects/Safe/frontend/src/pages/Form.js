@@ -1,14 +1,13 @@
 import React, { useState } from "react"
-import styled from "styled-components/macro"
+import { useNavigate } from "react-router-dom"
+
 import { motion } from "framer-motion"
 
 import { ButtonBase, Fab, Zoom } from "@mui/material"
 import CheckIcon from "@mui/icons-material/Check"
-import { useNavigate } from "react-router-dom"
 
 import "./Dropdown.css"
-import { OptionUnstyled, SelectUnstyled } from "@mui/base"
-import "../components/Transactions/Ripple.css"
+
 import {
   InputContainer,
   SmallInput,
@@ -22,17 +21,13 @@ import {
   Image,
   TitleInput,
 } from "./forms.styled"
+import Input from "../components/common/Input"
+import Ripple from "../components/common/Ripple"
+import FormDialog from "../components/common/Dialog"
 
-const Input = ({ placeholder, value, setValue, onClick }) => {
-  return (
-    <InputContainer onClick={onClick}>
-      <SmallInput value={value} placeholder={placeholder} />
-    </InputContainer>
-  )
-}
 const MenuItem = ({ value, onClick, setValue }) => {
   return (
-    <ButtonBase
+    <Ripple
       onClick={() => {
         setValue(value)
         onClick()
@@ -40,7 +35,7 @@ const MenuItem = ({ value, onClick, setValue }) => {
       style={{ justifyContent: "flex-start" }}
     >
       <DropdownItem>{value}</DropdownItem>
-    </ButtonBase>
+    </Ripple>
   )
 }
 
@@ -50,6 +45,7 @@ const Dropdown = ({ choices, onClick, setValue }) => {
       {choices.map((choice) => (
         <MenuItem onClick={onClick} value={choice} setValue={setValue} />
       ))}
+      <MenuItem value=" + Add new account" />
     </DropDownContainer>
   )
 }
@@ -57,7 +53,7 @@ const Dropdown = ({ choices, onClick, setValue }) => {
 const choices = ["DBS", "HSBC", "Maybank"]
 
 const InnerForm = () => {
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(false)
   const [value, setValue] = useState("")
   const [CRDB, setCRDB] = useState("CR")
   const [amount, setAmount] = useState(0)
@@ -68,24 +64,27 @@ const InnerForm = () => {
         <SmallInput onChange={(e) => setAmount(e.target.value)} placeholder="$12,000" />
         <BasicDiv onClick={() => setCRDB(CRDB === "CR" ? "DB" : "CR")}>{CRDB}</BasicDiv>
       </InputContainer>
-      <Input
-        value={value}
-        placeholder="DBS"
-        onClick={() => {
-          console.log(visible)
-          setVisible(!visible)
-        }}
-      />
-      {visible && (
-        <Dropdown
-          choices={choices}
+      <div>
+        <Input
+          marginBottom={"10px"}
+          value={value}
+          placeholder="DBS"
           onClick={() => {
+            console.log(visible)
             setVisible(!visible)
           }}
-          setValue={setValue}
         />
-      )}
-      <Input placeholder="Description" />
+        {visible && (
+          <Dropdown
+            choices={choices}
+            onClick={() => {
+              setVisible(!visible)
+            }}
+            setValue={setValue}
+          />
+        )}
+      </div>
+      <Input isTextField={true} placeholder="Description" />
     </>
   )
 }
@@ -95,6 +94,9 @@ const Form = () => {
   const [tag, setTag] = useState(" ")
   const onClick = () => {
     navigate("/")
+  }
+  const Temp = () => {
+    return <div>Hello</div>
   }
   return (
     <>
@@ -106,11 +108,7 @@ const Form = () => {
                 <Image />
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <TitleInput onChange={(e) => setName(e.target.value)} placeholder="Caifan" />
-                  <TitleInput
-                    onChange={(e) => setTag(e.target.value)}
-                    placeholder="Food"
-                    style={{ fontSize: "20px", fontWeight: 400, color: "black", fontFamily: "Inter" }}
-                  />
+                  <FormDialog />
                 </div>
               </Title>
 
