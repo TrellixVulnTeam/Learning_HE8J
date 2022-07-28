@@ -47,9 +47,9 @@ const Input = ({ marginBottom, type, placeholder, value, setValue, onClick, isTe
   return (
     <InputContainer marginBottom={marginBottom} isTextField={isTextField} onClick={onClick}>
       {isTextField ? (
-        <SmallTextArea type={type} value={value} placeholder={placeholder} />
+        <SmallTextArea onChange={(e) => setValue(e.target.value)} type={type} value={value} placeholder={placeholder} />
       ) : (
-        <SmallInput type={type} value={value} placeholder={placeholder} />
+        <SmallInput onChange={(e) => setValue(e.target.value)} type={type} value={value} placeholder={placeholder} />
       )}
     </InputContainer>
   )

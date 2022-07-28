@@ -6,14 +6,15 @@ import { AnimatePresence } from "framer-motion"
 import { useLocation } from "react-router-dom"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+import { useSelector } from "react-redux"
 
 const App = () => {
   const location = useLocation()
-  const [isLoggedIn, setLogin] = useState(true)
+  const access = useSelector((state) => state.user.userInfo.token)
   return (
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={isLoggedIn ? <Home /> : <Login />} />
+        <Route path="/" element={access ? <Home /> : <Login />} />
         <Route path="/form" element={<Form />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

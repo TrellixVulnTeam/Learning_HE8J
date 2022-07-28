@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import styled from "styled-components/macro"
@@ -6,6 +6,8 @@ import styled from "styled-components/macro"
 import { Fab, Zoom } from "@mui/material"
 import { NavigateNext } from "@mui/icons-material"
 import Input from "../components/common/Input"
+import { useDispatch } from "react-redux"
+import { updateUser } from "../redux/apiCalls"
 
 const Container = styled.div`
   display: flex;
@@ -32,16 +34,19 @@ const CardContainer = styled.div`
 
 const Login = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const onClick = () => {
-    navigate("/")
+    updateUser({ username: username, password: password }, dispatch)
   }
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
 
   return (
     <>
       <Container>
         <CardContainer style={{ position: "relative" }}>
-          <Input placeholder="username" />
-          <Input type="password" placeholder="password" />
+          <Input value={username} setValue={setUsername} placeholder="username" />
+          <Input value={password} setValue={setPassword} type="password" placeholder="password" />
           <Zoom in style={{ transitionDelay: "50ms" }}>
             <Fab
               onClick={onClick}
