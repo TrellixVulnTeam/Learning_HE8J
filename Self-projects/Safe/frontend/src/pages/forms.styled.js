@@ -45,7 +45,7 @@ export const InputContainer = styled.div`
 
 export const DropDownContainer = styled.div`
   width: 100%;
-  height: auto;
+  height: 170px;
   border-radius: 10px;
   border: none;
   margin-bottom: 30px;
@@ -56,6 +56,8 @@ export const DropDownContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: left;
+
+  overflow-y: scroll;
   > * {
     color: black;
   }
@@ -94,6 +96,7 @@ export const TitleInput = styled(BasicInput)`
   font-weight: 700;
   font-family: Inter;
   margin-bottom: 10px;
+  padding-left: 7px;
 `
 
 export const SmallInput = styled(BasicInput)`

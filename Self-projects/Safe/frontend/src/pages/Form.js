@@ -50,7 +50,7 @@ const Dropdown = ({ choices, onClick, setValue }) => {
   )
 }
 
-const choices = ["DBS", "HSBC", "Maybank"]
+const choices = ["DBS", "Savings Account", "Maybank", "POSB", "OCBC"]
 
 const InnerForm = () => {
   const [visible, setVisible] = useState(false)
