@@ -9,8 +9,8 @@ import Footer from "./Footer"
 import { Parallax, Background } from "react-parallax"
 
 const Background2 = styled.div`
-  /* background-image: url("assets/background.png"); */
-  background-image: url("assets/bg2.jpg");
+  background-image: url("assets/background.png");
+  /* background-image: url("assets/bg2.jpg"); */
   width: 100%;
   height: 100%;
   content: "";
@@ -26,7 +26,8 @@ const InnerContainer = styled.div`
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y proximity;
-  background-image: url("assets/bg2.jpg");
+  background-image: url("assets/background.png");
+  /* background-image: url("assets/bg2.jpg"); */
   background-size: cover;
 
   > * > * {
