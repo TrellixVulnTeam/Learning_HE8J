@@ -15,3 +15,10 @@ code {
 * {
   box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+  opacity: 0;
+  width: 0;
+  display: none;
+  background-color: transparent;
+}

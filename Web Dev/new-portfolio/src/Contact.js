@@ -7,7 +7,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 70%;
+  width: 100%;
   max-width: 1000px;
 `
 const InnerContainer = styled.div`

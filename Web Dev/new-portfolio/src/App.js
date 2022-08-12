@@ -18,18 +18,28 @@ const Background = styled.div`
   left: 0;
   background-size: cover;
 `
+
+const InnerContainer = styled.div`
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+
+  > * > * {
+    scroll-snap-align: start;
+  }
+`
 const App = () => {
   return (
     <div>
       <NavigationBar />
-      <MainSection />
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-        {/* <Skills /> */}
+      <InnerContainer>
         <Background />
-        <Projects />
-        <Contact />
-        {/* <Footer /> */}
-      </div>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <MainSection />
+          <Projects />
+          <Contact />
+        </div>
+      </InnerContainer>
     </div>
   )
 }

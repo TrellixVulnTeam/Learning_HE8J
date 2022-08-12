@@ -11,10 +11,10 @@ const Container = styled.div`
   justify-content: center;
   padding: 60px 40px 10px 40px;
   height: 90vh;
+  width: 100%;
   /* background-color: white; */
   color: black;
   border-radius: 0 0 0 0;
-  box-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.2);
 `
 const InnerContainer = styled.div`
   position: absolute;
@@ -54,6 +54,7 @@ const OuterContainer = styled.div`
   position: relative;
   border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.2);
 `
 
 const MainSection = () => {
