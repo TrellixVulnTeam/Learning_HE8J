@@ -26,10 +26,10 @@ const InnerContainer = styled.div`
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y proximity;
-  /* background-image: url("assets/bg2.jpg"); */
-  /* background-size: cover; */
+  background-image: url("assets/bg2.jpg");
+  background-size: cover;
 
-  > * > * > * {
+  > * > * {
     scroll-snap-align: start;
   }
 `
@@ -40,13 +40,13 @@ const App = () => {
 
       <InnerContainer>
         {/* <Background /> */}
-        <Parallax style={{ width: "100%" }} bgImage="assets/bg2.jpg" strength={-100}>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <MainSection />
-            <Projects />
-            <Contact />
-          </div>
-        </Parallax>
+        {/* <Parallax style={{ width: "100%" }} bgImage="assets/bg2.jpg" strength={-100}> */}
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <MainSection />
+          <Projects />
+          <Contact />
+        </div>
+        {/* </Parallax> */}
       </InnerContainer>
     </div>
   )
