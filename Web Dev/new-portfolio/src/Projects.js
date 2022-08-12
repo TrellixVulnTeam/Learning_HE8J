@@ -14,7 +14,8 @@ const Container = styled.div`
 const Header = styled.div`
   color: white;
   font-weight: 900;
-  font-size: 35px;
+  font-size: 50px;
+  text-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.5);
 `
 const InnerContainer = styled.div`
   display: flex;
@@ -47,10 +48,13 @@ const Card = styled.div`
   font-size: 20px;
   font-weight: 900;
   text-align: center;
+  box-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.5);
+  transition: 0.2s ease-in;
 
   position: relative;
   &:hover {
     cursor: pointer;
+
     background-color: #69c2a1;
     color: white;
     /* &:after {
