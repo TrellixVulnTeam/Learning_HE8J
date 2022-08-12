@@ -8,6 +8,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding: 20px 40px;
+  z-index: 99;
 `
 const SocialMediaRight = styled.div`
   width: 80px;
@@ -18,16 +19,25 @@ const SocialMediaRight = styled.div`
 const SocialIcons = ({ children }) => {
   return <Fab sx={{ height: "8px", width: "35px", borderRadius: 8, color: "black" }}>{children}</Fab>
 }
+
+const onClickRef = (url) => {
+  console.log(url)
+  const link = document.createElement("a")
+  link.href = url
+  link.target = "_blank"
+  link.click()
+}
+
 const Footer = () => {
   return (
     <Container>
       <div>{""}</div>
       <SocialMediaRight>
         <SocialIcons>
-          <LinkedIn />
+          <LinkedIn onClick={() => onClickRef("https://www.linkedin.com/in/taikahkiang/")} />
         </SocialIcons>
         <SocialIcons>
-          <GitHub />
+          <GitHub onClick={() => onClickRef("https://github.com/kktai1512")} />
         </SocialIcons>
       </SocialMediaRight>
     </Container>
