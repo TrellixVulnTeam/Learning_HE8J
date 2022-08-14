@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { Modal, Box, Typography } from "@mui/material"
+import { Dialog, DialogContent, DialogActions, DialogTitle, DialogContentText, Button } from "@mui/material"
+import ProjectCard from "./ProjectCard"
 
 const Container = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 100%;
+  width: 95%;
   max-width: 1000px;
 `
 const Header = styled.div`
@@ -19,8 +20,8 @@ const Header = styled.div`
 `
 const InnerContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 90%;
+  flex-direction: row;
+  width: 100%;
   height: 80%;
   align-items: center;
   justify-content: space-between;
@@ -33,7 +34,7 @@ const Gallery = styled.div`
   grid-template-columns: repeat(20px, 6);
   grid-row-gap: 5px;
   grid-column-gap: 5px;
-  width: 100%;
+  width: 90%;
   height: 80%;
 `
 
@@ -70,28 +71,38 @@ const Card = styled.div`
   }
 `
 
-const ModalCard = styled.div``
+const projects = [
+  { title: "Safe", description: "testing", imageURL: "", link: "", skills: ["React", "Redux", "Django"] },
+  { title: "Autonomous Car", description: "testing", imageURL: "", link: "", skills: ["RTOS", "Baremetal"] },
+  {
+    title: "FPGA Timer/ Mapper",
+    description: "testing",
+    imageURL: "",
+    link: "",
+    skills: ["Verilog", "Python", "Embedded Systems"],
+  },
+  {
+    title: "ROS Infrared Target Detection + Automatic Mapping Robot",
+    description: "testing",
+    imageURL: "",
+    link: "",
+    skills: ["ROS", "Python", "Solidworks"],
+  },
+  { title: "Halpmi", description: "testing", imageURL: "", link: "", skills: ["CSS", "JS"] },
+]
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-}
+const cards = projects.map((project) => (
+  <ProjectCard title={project.title} description={project.description} skills={project.skills} />
+))
 
 const Projects = () => {
-  const [whichModalVisible, setWhichModalVisible] = useState(0)
+  const [whichModalVisible, setWhichModalVisible] = useState(-1)
   const openModal = (i) => {
     console.log(i)
     setWhichModalVisible(i)
   }
   const closeModal = () => {
-    setWhichModalVisible(0)
+    setWhichModalVisible(-1)
   }
 
   return (
@@ -99,35 +110,34 @@ const Projects = () => {
       <InnerContainer>
         <Header>Projects</Header>
         <Gallery>
-          <Card onClick={() => openModal(1)} style={{ gridColumn: "1/6", gridRow: "1/2" }}>
+          <Card onClick={() => openModal(0)} style={{ gridColumn: "1/6", gridRow: "1/2" }}>
             Safe - personal finance
           </Card>
           {/* <Card style={{ gridColumn: "2/3", gridRow: "2/4" }}>2</Card> */}
-          <Card style={{ gridColumn: "3/5", gridRow: "2/3" }}>
+          <Card onClick={() => openModal(1)} style={{ gridColumn: "3/5", gridRow: "2/3" }}>
             <div style={{ width: "40%" }}>Autonomous car</div>
           </Card>
-          <Card style={{ gridColumn: "3/4", gridRow: "3/5" }}>FPGA timer/ mapping</Card>
-          <Card style={{ gridColumn: "5/6", gridRow: "2/5" }}>
+          <Card onClick={() => openModal(2)} style={{ gridColumn: "3/4", gridRow: "3/5" }}>
+            FPGA timer/ mapping
+          </Card>
+          <Card onClick={() => openModal(3)} style={{ gridColumn: "5/6", gridRow: "2/5" }}>
             <div style={{ width: "40%" }}> ROS robot</div>
           </Card>
-          <Card style={{ gridColumn: "1/3", gridRow: "4/5" }}>Halpmi</Card>
+          <Card onClick={() => openModal(4)} style={{ gridColumn: "1/3", gridRow: "4/5" }}>
+            Halpmi
+          </Card>
         </Gallery>
       </InnerContainer>
-      <Modal
-        open={whichModalVisible === 1}
+      <Dialog
+        open={whichModalVisible !== -1}
+        keepMounted
         onClose={closeModal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        aria-describedby="alert-dialog-slide-description"
+        fullWidth
+        maxWidth="md"
       >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
-        </Box>
-      </Modal>
+        {cards[whichModalVisible]}
+      </Dialog>
     </Container>
   )
 }

@@ -57,7 +57,7 @@ const Contact = () => {
   return (
     <Container id="contact">
       <InnerContainer>
-        <Header>Contact me.</Header>
+        <Header>Contact me</Header>
         <InputForm>
           <InputContainer>Name</InputContainer>
           <InputContainer>Email</InputContainer>

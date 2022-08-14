@@ -33,7 +33,7 @@ const InnerContainer = styled.div`
 
 const Text = styled.div`
   display: flex;
-  height: 40%;
+  height: fit-content;
   flex-direction: column;
 
   @media (max-width: 1024px) {
@@ -70,13 +70,14 @@ const MainSection = () => {
             <div style={{ fontSize: "20px", fontFamily: "Fira Mono" }}>
               Hello there, my name is <span style={{ fontWeight: "1000" }}>Tai</span>
             </div>
-            <div style={{ fontSize: "30px", marginBottom: "20px" }}>I'm a software engineer</div>
+            <div style={{ fontSize: "30px", marginBottom: "20px" }}>I'm a software engineer.</div>
             <div>
               <div style={{ fontSize: "15px", width: "70%" }}>
-                Currently, I'm a penultimate Computer Engineering student studying in NUS
+                Currently, I'm a penultimate Computer Engineering student studying in NUS.
               </div>
               <div style={{ fontSize: "15px", width: "70%" }}>
-                My interests include AI/ML, Robotics, IOT, Trading, Anime, Startups and Guitar
+                My interests include AI/ML, Robotics, IOT, Trading, Anime, Startups and Guitar. I am actively looking
+                for internship and freelancing opportunities!
               </div>
             </div>
           </Text>

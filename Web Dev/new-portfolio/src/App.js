@@ -44,6 +44,7 @@ const App = () => {
         {/* <Parallax style={{ width: "100%" }} bgImage="assets/bg2.jpg" strength={-100}> */}
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <MainSection />
+          <Skills />
           <Projects />
           <Contact />
         </div>
