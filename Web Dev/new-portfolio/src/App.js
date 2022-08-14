@@ -25,7 +25,7 @@ const Background2 = styled.div`
 const InnerContainer = styled.div`
   height: 100vh;
   overflow-y: scroll;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
   background-image: url("assets/background.png");
   /* background-image: url("assets/bg2.jpg"); */
   background-size: cover;
