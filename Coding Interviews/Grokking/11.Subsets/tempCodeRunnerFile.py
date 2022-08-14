@@ -1,0 +1,1 @@
+tring.generateValidParentheses(3)])
