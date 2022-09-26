@@ -1,0 +1,27 @@
+Please enter your orders
+0
+B: 100(350)@12#Rejr,||
+end
+0
+B: 100(350)@12#Rejr,B: 70@12#1FZu,||
+end
+0
+B: 100(350)@12#Rejr,B: 70@12#1FZu,B: 100(420)@12#qfZL,||
+end
+S: 200@15#Ns5d
+0
+B: 100(350)@12#Rejr,B: 70@12#1FZu,B: 100(420)@12#qfZL,||
+S: 200@15#Ns5d,end
+2250
+B: 100(350)@12#Rejr,B: 70@12#1FZu,B: 100(420)@12#qfZL,||
+S: 50@15#Ns5d,end
+S: 0@10#5Rey
+1440
+B: 50@12#1FZu,B: 100(420)@12#qfZL,B: 100(250)@12#Rejr,||
+S: 50@15#Ns5d,end
+S: 0@10#mYZz
+6000
+B: 50(170)@12#qfZL,B: 50(50)@12#Rejr,||
+S: 50@15#Ns5d,end
+B: 50(170)@12#qfZL,B: 50(50)@12#Rejr,||
+S: 50@15#Ns5d,end

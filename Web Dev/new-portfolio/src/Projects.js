@@ -72,27 +72,50 @@ const Card = styled.div`
 `
 
 const projects = [
-  { title: "Safe", description: "testing", imageURL: "", link: "", skills: ["React", "Redux", "Django"] },
-  { title: "Autonomous Car", description: "testing", imageURL: "", link: "", skills: ["RTOS", "Baremetal"] },
+  {
+    title: "Safe (WIP)",
+    description:
+      "Safe is a personal finance app, made for daily budgeting. It supports multi-wallet capability, and data-analytics to inform users about their spendings. It supports basic filtering of categories/accounts. Future capabilities include receipt-scanning, and excel exporting for a clearer view.",
+    imageURL: "",
+    link: "assets/safe.png",
+    skills: ["React", "Redux", "Django"],
+  },
+  {
+    title: "RTOS Car",
+    description:
+      "This Real-Time-Operating-System car is built on the Freedom KL25Z. It supports self-navigation around an obstacle, while simultaneously outputting different audio/lights depending on its position.",
+    imageURL: "",
+    link: "assets/rtos.png",
+    skills: ["RTOS", "Baremetal", "Python"],
+  },
   {
     title: "FPGA Timer/ Mapper",
     description: "testing",
-    imageURL: "",
-    link: "",
+    imageURL:
+      "This project is built on the Basys-3 FPGA board, with a 0.96' OLED display and a small microphone. It supports multi-mode through the use of on-board switch combination. There are two modes : a clap activated timer and stopwatch, and a hiking-aid that helps to keep track of current position. Built by me and my schoolmate, Dillon",
+    link: "assets/ee2026.png",
     skills: ["Verilog", "Python", "Embedded Systems"],
   },
   {
     title: "ROS Infrared Target Detection + Automatic Mapping Robot",
-    description: "testing",
+    description:
+      "Accomplished a	raspberry-pi	powered,	ROS2	programmed	Turtlebot	that	navigates	itself	through	an	area	and	produces	a	complete	map,	while	shooting	a	ping-pong	ball	at	any	infrared	target	detected. Led the	design	of	the	shooting	mechanism	and	the	integration	to	the	bot,	CAD-ed	using	Solidworks. Aided	in	the	programming	of	the	detection	and	threshold	measurement	to	ensure	accurate	result",
     imageURL: "",
-    link: "",
+    link: "assets/turtlebot.png",
     skills: ["ROS", "Python", "Solidworks"],
   },
-  { title: "Halpmi", description: "testing", imageURL: "", link: "", skills: ["CSS", "JS"] },
+  {
+    title: "Halpmi",
+    description:
+      "HALPMI is a Command Line Interface (CLI) Application that allows administrators in clinics to manage the clinic's day-to-day administrative tasks. More specifically, using HALPMI the user is able to insert new information regarding Doctors, Patients and Medication. Users can also schedule appointment for Patients with Doctors. Users are also able to track stocks of medications.",
+    imageURL: "",
+    link: "assets/halpmi.png",
+    skills: ["CSS", "JS"],
+  },
 ]
 
 const cards = projects.map((project) => (
-  <ProjectCard title={project.title} description={project.description} skills={project.skills} />
+  <ProjectCard title={project.title} description={project.description} skills={project.skills} link={project.link} />
 ))
 
 const Projects = () => {
@@ -115,7 +138,7 @@ const Projects = () => {
           </Card>
           {/* <Card style={{ gridColumn: "2/3", gridRow: "2/4" }}>2</Card> */}
           <Card onClick={() => openModal(1)} style={{ gridColumn: "3/5", gridRow: "2/3" }}>
-            <div style={{ width: "40%" }}>Autonomous car</div>
+            <div style={{ width: "40%" }}>RTOS car</div>
           </Card>
           <Card onClick={() => openModal(2)} style={{ gridColumn: "3/4", gridRow: "3/5" }}>
             FPGA timer/ mapping

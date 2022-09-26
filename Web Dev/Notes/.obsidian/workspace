@@ -7,12 +7,8 @@
         "id": "dc58f5e1e9238e92",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Notes-Redux.md",
-            "mode": "source",
-            "source": false
-          }
+          "type": "graph",
+          "state": {}
         }
       }
     ],
@@ -69,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes-Redux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +84,15 @@
   },
   "active": "dc58f5e1e9238e92",
   "lastOpenFiles": [
+    "Notes-StyledComponents.md",
     "Notes-Redux.md",
     "Notes-Router.md",
     "Notes-CSS.md",
-    "TodoList.md",
-    "Firebase.md",
-    "Notes-Axios.md",
-    "Notes - eCommerce App (React Redux Api Intgeration).md",
-    "Notes - CSRF.md",
+    "Notes-DjangoAPI.md",
     "Notes - REACT JWT.md",
-    "Notes-React.md"
+    "Notes - SimpleJWT.md",
+    "Notes - MongoDB.md",
+    "TodoList.md",
+    "Firebase.md"
   ]
 }

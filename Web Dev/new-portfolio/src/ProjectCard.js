@@ -2,18 +2,18 @@ import React from "react"
 import styled from "styled-components"
 const Container = styled.div`
   height: 65vh;
-  width: 70vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 `
 const Description = styled.div`
-  width: 50%;
+  width: 70%;
   padding: 20px 30px;
 `
 const Image = styled.div`
   width: 50%;
   background-size: cover;
-  background-image: url("https://media.istockphoto.com/photos/programming-code-abstract-technology-background-of-software-developer-picture-id1224500457?k=20&m=1224500457&s=170667a&w=0&h=XzYyHReOY2K1R-rZeQIUXGHLsOJuFHLYtRL7AWR-6GY=");
+  background-image: url(${(props) => props.link});
 `
 const Pill = styled.div`
   border-radius: 15px;
@@ -36,7 +36,7 @@ const ProjectCard = ({ title, description, imageUrl, link, skills }) => {
           ))}
         </div>
       </Description>
-      <Image />
+      <Image link={link} />
     </Container>
   )
 }

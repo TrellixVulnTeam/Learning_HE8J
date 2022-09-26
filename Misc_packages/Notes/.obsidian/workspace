@@ -1,0 +1,93 @@
+{
+  "main": {
+    "id": "945a500cc6e27ce3",
+    "type": "split",
+    "children": [
+      {
+        "id": "75c9639355ddcb8c",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Airflow.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a47e90e8abb21dde",
+    "type": "split",
+    "children": [
+      {
+        "id": "d304f90ba0d2026c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "184fd92c77641c29",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "128d9e84a4cae828",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4396fe01416daea0",
+    "type": "split",
+    "children": [
+      {
+        "id": "0d8261594b68f693",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cbfca3ba4b66a8ff",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Airflow.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "75c9639355ddcb8c",
+  "lastOpenFiles": [
+    "Airflow.md"
+  ]
+}

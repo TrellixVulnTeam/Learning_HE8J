@@ -73,7 +73,7 @@ const Skills = () => {
           <SkillBar skillName="Javascript" percentage="80%" />
           <SkillBar skillName="Java" percentage="85%" />
           <SkillBar skillName="C ++ " percentage="75%" />
-          <SkillBar skillName="Verilog" percentage="70%" />
+          <SkillBar skillName="Embedded" percentage="70%" />
         </BarContainer>
         <h1 style={{ fontSize: "45px", textOrientation: "upright", writingMode: "vertical-lr", color: "white" }}>
           SKILLS
